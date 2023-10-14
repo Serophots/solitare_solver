@@ -1,0 +1,24 @@
+ - Put up all the aces
+ - Make all moves
+ - Consider only putting cards up from the table and not the deck, unless moving up from deck enables a move up from table
+
+A move is positive if:
+ - It creates space and there are kings in placing queue
+ - It reveals a card beneath
+ - It enables another move
+
+
+Pair card = card of same number and colour
+
+Duplicate cards:
+ - if cards pair card is on the aces, place it
+ - if cards pair card is in upturned, place it
+ - If both pair cards are upturned, freely place next card on either
+ - If both pair cards are in the deck, place them freely
+
+
+ Game loop:
+ - Put up any aces
+ - Consider putting up further cards onto aces if they're positive moves
+ - Consider moves within the table
+ - Consider moves from draw-deck to table
