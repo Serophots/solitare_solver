@@ -12,7 +12,6 @@ pub struct GameState<'a> { //Describes all the possible moves of the game at its
     pub deck_moves: Vec<GameMove>,
 
     pub aces: &'a[AceStack<'a>; 4],
-    // pub final_table_stack_cards: Vec<(&'a Card<'a>, CardPosition)>,
     pub queuing_kings: i8,
 }
 
@@ -45,7 +44,7 @@ impl<'a> GameState<'a> {
         }
     }
 
-
+    //Function exists only for debugging
     pub fn get_all_moves_youch(&self) -> Vec<&GameMove> {
         let mut moves = Vec::new();
 
@@ -85,6 +84,7 @@ pub struct GameMove {
 }
 
 impl GameMove {
+    //Function exists only for debugging
     pub fn debug_move(&self, game: &Game) -> String {
         let mut line2 = String::from("\n");
 

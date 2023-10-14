@@ -121,13 +121,10 @@ fn is_move_positive<'a>(game_move: &GameMove, game: &Game, game_state: &GameStat
     // - It creates space for a queuing king DONE
     // - It reveals a card beneath DONE
     // - It enables a positive move //TODO: Create positivity priority in this is only half as positive as others
-    
+
     //Consider that we may be moving multiple cards in a single move
     match game_move.from {
         CardPosition::TableUpturned { stack_index, upturned_index } => {
-
-            //MOVING FROM TABLE UPTURNED DOES NOT CHECK IF IT ENABLES A MOVE
-
             let stack = &game.table[stack_index as usize];
 
             if upturned_index == 0 {

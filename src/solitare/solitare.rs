@@ -15,11 +15,6 @@ pub struct Game<'a> {
 
 impl<'a> Game<'a> {
     pub fn new() -> Self {
-        //We propagate changes through the sub structures like Stack, AceStack, Card which all own their descendent cards
-        // -> no master deck - this is duplicate cloned date whose structure/ordering is not manipulated through the above strategy, and is therefore pointless
-
-        //Instead, the deck should be generated randomly here and Cards constructed in here under the ownership of the correct properties of this struct
-
         let mut deck_integers: Vec<i8> = (0..52).collect();
         deck_integers.shuffle(&mut thread_rng());
 
@@ -358,7 +353,6 @@ impl<'a> Game<'a> {
 
 
             aces: &self.aces,
-            // final_table_stack_cards,
             queuing_kings
         }
     }
